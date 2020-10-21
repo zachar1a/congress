@@ -7,6 +7,7 @@ from .backend import results
 def home_view(request, *args, **kwargs):
     context={
             'results':results.houseVotes(),
+            'bills': results.bill(),
             }
     return render(request, "home.html", context)
 

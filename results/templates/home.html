@@ -1,15 +1,4 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-	{% for r in results %}
-	{{ r.title }}<br/>
-	{{ r.totalY }}<br/>
-	{{ r.totalN }}<br/>
-	{{ r.Result }}<br/><br/>
-	{{ r.number }}<br/><br/>
-	<a href="{{ r.Source }}">link</a><br/><br/>
-	{{ r.action }}
-	{% endfor %}
-
 {% endblock %}
