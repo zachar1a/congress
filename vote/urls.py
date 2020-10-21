@@ -24,5 +24,4 @@ from results.views import(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('', home_view, name='/home'),
 ]
