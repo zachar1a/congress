@@ -17,8 +17,11 @@ class billResults:
         self.action   = action
 
 
+# TODO 
+# it is not that important imo but i took out the cosponsors
+# and cosponsors by state, might want to add those in later
 class billInfo:
-    def __init__(self, b_id, b_slug, number, title, sponsor_title, sponsor_id, sponsor_name, sponsor_state, sponsor_party, introduced, active, last_vote, houseResult, senateResult, enacted, vetoed, cosponsors, cosponsor_by_party, subject, shortSummary, majorAction):
+    def __init__(self, b_id, b_slug, number, title, sponsor_title, sponsor_id, sponsor_name, sponsor_state, sponsor_party, introduced, active, last_vote, houseResult, senateResult, enacted, vetoed, subject, shortSummary, majorAction):
         self.b_id              = b_id
         self.b_slug            = b_slug
         self.number            = number
@@ -35,8 +38,9 @@ class billInfo:
         self.senateResult      = senateResult
         self.enacted           = enacted
         self.vetoed            = vetoed
-        self.cosponsors        = cosponsors
-        self.cosponsor_by_party= cosponsor_by_party
+        # removing these since i am not using in the models
+        # self.cosponsors        = cosponsors
+        # self.cosponsor_by_party= cosponsor_by_party
         self.subject           = subject
         self.shortSummary      = shortSummary
         self.majorAction       = majorAction

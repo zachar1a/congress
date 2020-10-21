@@ -53,8 +53,6 @@ def bill():
        ,b['senate_passage']
        ,b['enacted']
        ,b['vetoed']
-       ,b['cosponsors']
-       ,b['cosponsors_by_party']
        ,b['primary_subject']
        ,b['summary_short']
        ,b['latest_major_action']))
