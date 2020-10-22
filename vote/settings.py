@@ -131,13 +131,11 @@ REST_FRAMEWORK = {
 }
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_DIRS =[
-        ]
-STATICFILE_DIRS =[
+STATICFILES_DIRS =[
          os.path.join(REACT_APP_DIR, 'build', 'static'),
         ]
 CORS_ORIGIN_WHITELIST =[
