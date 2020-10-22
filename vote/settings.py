@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wx$35%m%5zy2vjs43x%)kner%p_l8a(fa(qa$&jk2$5my1)b^('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['state-of-congress.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','state-of-congress.herokuapp.com']
 
 
 # Application definition
@@ -126,14 +126,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_DIRS =[
         os.path.join(BASE_DIR, 'static/',
                                'results/static/js/',
                                'results/static/css/',
-                               REACT_APP_DIR,
-                               'build')
+                               )
+        ]
+STATICFILE_DIRS =[
+         os.path.join(REACT_APP_DIR, 'build', 'static'),
         ]
 CORS_ORIGIN_WHITELIST =[
         'https://localhost:8000',
