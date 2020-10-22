@@ -136,7 +136,7 @@ STATIC_DIRS =[
                                'build')
         ]
 CORS_ORIGIN_WHITELIST =[
-        #'https://localhost:8000',
-        #'http://localhost:3000'
+        'https://localhost:8000',
+        'http://localhost:3000',
         'https://state-of-congress.herokuaapp.com'
         ]
