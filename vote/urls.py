@@ -27,5 +27,5 @@ router.register(r'info', views.billInfoView, 'info')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    re_path(r'^', views.FrontEndAppView.as_view()),
+    path('', views.FrontEndAppView.as_view()),
 ]
