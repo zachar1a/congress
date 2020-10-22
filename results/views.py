@@ -30,7 +30,10 @@ class billInfoView(viewsets.ModelViewSet):
                         subject=b.subject,
                         shortSummary=b.shortSummary,
                         major_action=b.majorAction)
-        bill.save()
+        try:
+            bill.save()
+        except:
+            pass
 
     serializer_class = billInfoSerializer
     queryset = billInfo.objects.all()

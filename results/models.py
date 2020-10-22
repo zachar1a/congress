@@ -22,8 +22,8 @@ class billResults(models.Model):
 
 
 class billInfo(models.Model):
-    bill_id             =models.CharField(max_length=10, default=None,null=True)
-    slug                =models.CharField(max_length=10, default=None,null=True)
+    bill_id             =models.CharField(unique=True, max_length=10, default=None)
+    slug                =models.CharField(unique=True, max_length=10, default=None)
     number              =models.CharField(max_length=10, default=None,null=True)
     title               =models.CharField(max_length=200, default=None,null=True)
     sponsor_title       =models.CharField(max_length=10, default=None,null=True)
