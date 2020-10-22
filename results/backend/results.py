@@ -31,9 +31,11 @@ def viewVoteResults(r):
     return billResults
 
 def houseVotes():
+    print('house has been called')
     return viewVoteResults(getRequest(voteUrl).text)
 
 def bill():
+    print('bill has been called')
     billInfo = json.loads(getRequest(billInfoUrl).text)
     billList = []
     for b in billInfo['results'][0]['bills']:

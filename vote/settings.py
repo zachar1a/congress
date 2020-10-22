@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
 
     'results',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -128,4 +131,7 @@ STATIC_DIRS =[
         os.path.join(BASE_DIR, 'static/',
                                'results/static/js/',
                                'results/static/css/',)
+        ]
+CORS_ORIGIN_WHITELIST =[
+        'https://localhost:8000'
         ]
