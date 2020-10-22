@@ -5,6 +5,28 @@ from .models import *
 import requests
 from .backend import results
 
+
+import os, logging
+from djaaango.http import HttpResponse
+from django.views.generic import View
+from django.conf import settings
+
+class FrontEndAppView(View):
+    index = os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')
+
+    def get(self, request):
+        try:
+            with open(self.index) as f:
+                return HttpResponse(f.read())
+            except FileNotFoundError:
+                logging.exception("what")
+                return HttpResponse(
+                        '''
+                        wtf is going on
+                        ''',
+                        status=501,
+                        )
+
 # Create your views here.
 
 class billInfoView(viewsets.ModelViewSet):

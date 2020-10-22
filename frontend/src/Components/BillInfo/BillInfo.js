@@ -1,6 +1,6 @@
 import React from "react";
 
-const url = "http://localhost:8000/api/info/"
+const url = "https://state-of-congress.herokuapp.com/api/info/"
 class BillInfo extends React.Component{
 
     constructor(props){
