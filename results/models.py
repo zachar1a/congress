@@ -44,4 +44,5 @@ class billInfo(models.Model):
     subject             =models.CharField(max_length=100, default=None,null=True)
     shortSummary        =models.CharField(max_length=2000, default=None,null=True)
     major_action        =models.CharField(max_length=200, default=None,null=True)
+    infoUrl             =models.CharField(max_length=250, default=None,null=True)
 

@@ -23,7 +23,8 @@ class billInfoSerializer(serializers.ModelSerializer):
         ,'vetoed'
         ,'subject'
         ,'shortSummary'
-        ,'major_action')
+        ,'major_action'
+        ,'infoUrl')
          
 class billResultsSerializer(serializers.ModelSerializer):
     class Meta:

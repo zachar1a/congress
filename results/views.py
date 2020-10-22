@@ -29,7 +29,8 @@ class billInfoView(viewsets.ModelViewSet):
                         vetoed=b.vetoed, 
                         subject=b.subject,
                         shortSummary=b.shortSummary,
-                        major_action=b.majorAction)
+                        major_action=b.majorAction,
+                        infoUrl = b.infoUrl)
         try:
             bill.save()
         except:

@@ -21,7 +21,7 @@ class billResults:
 # it is not that important imo but i took out the cosponsors
 # and cosponsors by state, might want to add those in later
 class billInfo:
-    def __init__(self, b_id, b_slug, number, title, sponsor_title, sponsor_id, sponsor_name, sponsor_state, sponsor_party, introduced, active, last_vote, houseResult, senateResult, enacted, vetoed, subject, shortSummary, majorAction):
+    def __init__(self, b_id, b_slug, number, title, sponsor_title, sponsor_id, sponsor_name, sponsor_state, sponsor_party, introduced, active, last_vote, houseResult, senateResult, enacted, vetoed, subject, shortSummary, majorAction, infoUrl):
         self.b_id              = b_id
         self.b_slug            = b_slug
         self.number            = number
@@ -44,3 +44,4 @@ class billInfo:
         self.subject           = subject
         self.shortSummary      = shortSummary
         self.majorAction       = majorAction
+        self.infoUrl           = infoUrl

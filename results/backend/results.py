@@ -57,7 +57,8 @@ def bill():
        ,b['vetoed']
        ,b['primary_subject']
        ,b['summary_short']
-       ,b['latest_major_action']))
+       ,b['latest_major_action']
+       ,b['govtrack_url']))
 
     return billList
 
