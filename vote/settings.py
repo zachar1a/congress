@@ -126,11 +126,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_DIRS =[
         os.path.join(BASE_DIR, 'static/',
                                'results/static/js/',
-                               'results/static/css/',)
+                               'results/static/css/',
+                               REACT_APP_DIR,
+                               'build')
         ]
 CORS_ORIGIN_WHITELIST =[
         #'https://localhost:8000',
