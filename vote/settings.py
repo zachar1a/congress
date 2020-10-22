@@ -141,5 +141,5 @@ STATICFILES_DIRS =[
 CORS_ALLOWED_ORIGINS=[
         'http://localhost:8000',
         'http://localhost:3000',
-        'https://state-of-congress.herokuaapp.com'
+        'https://state-of-congress.herokuapp.com'
         ]
