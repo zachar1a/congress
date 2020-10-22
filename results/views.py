@@ -18,9 +18,9 @@ class FrontEndAppView(View):
         try:
             with open(self.index) as f:
                 return HttpResponse(f.read())
-            except FileNotFoundError:
-                logging.exception("what")
-                return HttpResponse(
+        except FileNotFoundError:
+            logging.exception("what")
+            return HttpResponse(
                         '''
                         wtf is going on
                         ''',
