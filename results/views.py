@@ -5,7 +5,6 @@ from .models import *
 import requests
 from .backend import results
 
-
 import os, logging
 from django.http import HttpResponse
 from django.views.generic import View
@@ -28,6 +27,33 @@ class FrontEndAppView(View):
                         )
 
 # Create your views here.
+
+class voteResults(viewsets.ModelViewSet):
+    results = results.houseVotes()
+
+    for r in results:
+        result = billResults(
+                congress = r.congress,
+                chamber = r.chamber,
+                number = r.number,
+                title = r.title,
+                demY = r.demY,
+                demN = r.demN,
+                demNV = r.demNV,
+                repY = r.repY,
+                repN = r.repN,
+                repNV = r.repNV,
+                totalY = r.totalY,
+                totalN = r.totalN,
+                Result = r.Result,
+                Source = r.Source,
+                action = r.action)
+        try:
+            result.save()
+        except:
+            pass
+    serializer_class = billResultsSerializer
+    queryset = billResults.objects.all()
 
 class billInfoView(viewsets.ModelViewSet):
     info = results.bill()
