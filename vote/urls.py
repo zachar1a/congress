@@ -28,5 +28,5 @@ router.register(r'results', views.voteResults, 'results')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    url('', views.FrontEndAppView.as_view()),
+    path('', views.FrontEndAppView.as_view()),
 ]
