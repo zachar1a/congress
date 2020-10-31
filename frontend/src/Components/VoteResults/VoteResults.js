@@ -1,7 +1,10 @@
 import React from "react";
 
 const url = "https://state-of-congress.herokuapp.com/api/results/"
-class BillInfo extends React.Component{
+
+//This is for testing the backend
+//const url = "localhost:8000/api/results/"
+class VoteResults extends React.Component{
 
     constructor(props){
         super(props);
@@ -39,4 +42,4 @@ class BillInfo extends React.Component{
         };
 }
 
-export default BillInfo;
+export default VoteResults;

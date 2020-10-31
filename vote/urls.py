@@ -22,11 +22,11 @@ from results.views import FrontEndAppView
 from results import views
 
 router = routers.DefaultRouter()
-router.register(r'info', views.billInfoView, 'info')
-router.register(r'results', views.voteResults, 'results')
+router.register(r'info', views.billInfoView, 'info/')
+#router.register(r'results', views.voteResults, 'results')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('', FrontEndAppView.as_view()),
+    path('', views.FrontEndAppView.as_view()),
 ]
