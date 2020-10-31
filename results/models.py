@@ -5,8 +5,8 @@ from django.db import models
 class billResults(models.Model):
     congress =models.CharField(max_length=10, default=None,null=True)
     chamber  =models.CharField(max_length=10, default=None,null=True)
-    number   =models.CharField(max_length=10, default=None,null=True)
-    title    =models.CharField(max_length=300, default=None,null=True)
+    number   =models.CharField(unique=True, max_length=10, default=None,null=True)
+    title    =models.CharField(unique=True, max_length=300, default=None,null=True)
     demY     =models.IntegerField(default=None, null=True)
     demN     =models.IntegerField(default=None, null=True)
     demNV    =models.IntegerField(default=None, null=True)
