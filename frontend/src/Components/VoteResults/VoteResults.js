@@ -1,9 +1,9 @@
 import React from "react";
 
-//const url = "https://state-of-congress.herokuapp.com/api/results/"
+const url = "https://state-of-congress.herokuapp.com/api/results/"
 
 //This is for testing the backend
-const url = "http://localhost:8000/api/results/"
+//const url = "http://localhost:8000/api/results/"
 class VoteResults extends React.Component{
 
     constructor(props){
