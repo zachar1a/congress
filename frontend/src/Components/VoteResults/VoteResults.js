@@ -23,9 +23,13 @@ class VoteResults extends React.Component{
         const resultItems = this.state.results.map((result)=>{
             return(
                 <div className="resultCard">
-                        {result.congress}
-                        {result.number}
-                        {result.Result}
+		    <br/>
+                    <br/>Number: <i>{result.number}</i> 
+		    <br/>Title: <b>{result.title}</b>
+		    	<br/><a href={result.Source}>Congressional Votes</a>
+                        <br/>Action: {result.action}
+                        <br/>Result: {result.Result}
+		    <br/>
                 </div>
             );
          });
