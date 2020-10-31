@@ -50,7 +50,6 @@ class voteResults(viewsets.ModelViewSet):
         try:
             result.save()
         except:
-            print('not saaved')
             pass
     serializer_class = billResultsSerializer
     queryset = billResults.objects.all()
