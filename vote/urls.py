@@ -18,15 +18,16 @@ from django.urls import path, include, re_path
 from rest_framework import routers
 from django.conf.urls import url, include 
 
-from results.views import FrontEndAppView
-from results import views
+from results.views import FrontEndAppView, billInfoView, voteResults
 
 router = routers.DefaultRouter()
-router.register(r'info', views.billInfoView, 'info/')
-#router.register(r'results', views.voteResults, 'results')
+router.register(r'info', billInfoView, 'info/')
+router.register(r'results', voteResults, 'results/')
+
+#urlpatterns=router.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('', views.FrontEndAppView.as_view()),
+    path('', FrontEndAppView.as_view()),
 ]

@@ -27,7 +27,6 @@ class FrontEndAppView(View):
                         )
 
 # Create your views here.
-'''
 class voteResults(viewsets.ModelViewSet):
     results = results.houseVotes()
 
@@ -54,7 +53,6 @@ class voteResults(viewsets.ModelViewSet):
             pass
     serializer_class = billResultsSerializer
     queryset = billResults.objects.all()
-'''
 
 class billInfoView(viewsets.ModelViewSet):
     info = results.bill()

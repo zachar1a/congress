@@ -15,7 +15,7 @@ class billResults(models.Model):
     repNV    =models.IntegerField(default=None, null=True)
     totalY   =models.IntegerField(default=None, null=True)
     totalN   =models.IntegerField(default=None, null=True)
-    Result   =models.CharField(max_length=10, default=None,null=True)
+    Result   =models.CharField(max_length=30, default=None,null=True)
     Source   =models.CharField(max_length=300, default=None,null=True)
     action   =models.CharField(max_length=200, default=None,null=True)
 
