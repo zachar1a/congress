@@ -12,3 +12,6 @@ Added in the vote results and now i just need to add in some routes so votes and
 
 # Oct. 31, 2020
 Developing the cards for bills and votes
+
+# Nov. 1, 2020
+Added in some routing for the pages, probably am going to want to create a landing page for this, just to show off the latest bills and votes or something

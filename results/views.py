@@ -7,8 +7,23 @@ from .backend import results
 
 import os, logging
 from django.http import HttpResponse
+from django.http.response import JsonResponse
 from django.views.generic import View
+from rest_framework.decorators import api_view
 from django.conf import settings
+
+@api_view(["GET"])
+def retrieveBill(request, slug):
+    try:
+        print('trying')
+        bill =billInfo.objects.get(slug=slug)
+    except billResults.DoesNotExist:
+        return JsonResponse({'message':'Bill does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method=="GET":
+        billData = billInfoSerializer(bill)
+        print(billData.data)
+        return JsonResponse(billData.data)
 
 class FrontEndAppView(View):
     index = os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')
