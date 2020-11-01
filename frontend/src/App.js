@@ -6,7 +6,11 @@ import './App.css';
 
 function App() {
 	const voteTitleStyle={
-		width:"30%",
+		width:"40%",
+		margin:"auto"
+	};
+	const BillTitleStyle={
+		width:"40%",
 		margin:"auto"
 	};
   return (
@@ -15,7 +19,10 @@ function App() {
 	  	<h2 className="vote-title" style={voteTitleStyle}>Vote Results</h2>
 	  	<VoteResults />
 	  </div>
-	  <BillInfo />
+	  <div classNaame="Bills">
+	  	<h2 className="bill-title" style={BillTitleStyle}>Bill Info</h2>
+	  	<BillInfo />
+	  </div>
     </div>
   );
 }

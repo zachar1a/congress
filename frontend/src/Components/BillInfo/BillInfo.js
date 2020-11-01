@@ -1,4 +1,5 @@
 import React from "react";
+import BillCard from "../BillCard/BillCard";
 
 const url = "https://state-of-congress.herokuapp.com/api/info/"
 
@@ -22,18 +23,13 @@ class BillInfo extends React.Component{
     render(){
         const billItems = this.state.bills.map((bill)=>{
             return(
-                <div className="billCard">
-                    <h2>[{bill.sponsor_party}] {bill.sponsor_name} {bill.sponsor_state}</h2>
-                    <sup>
-                        {bill.title}
-                    </sup>
-                    <ul>
-                <a href={bill.infoUrl}>
-                        <li>{bill.number} {bill.bill_id}</li>
-                </a>
-                        <li><b>{bill.major_action}</b></li>
-                    </ul>
-                </div>
+		    <BillCard billid={bill.bill_id} 
+		    	      title={bill.title}
+		    	      sponsorParty={bill.sponsor_party}
+		    	      sponsor={bill.sponsor_name}
+		    	      sponsorState={bill.sponsor_state}
+		    	      infoUrl={bill.infoUrl}
+		    	      slug={bill.slug}/>
             );
          });
         return(

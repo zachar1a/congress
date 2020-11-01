@@ -1,0 +1,8 @@
+.BillCard{
+	width:40%;
+	margin:auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border:solid;
+	border-width:1px;
+}
