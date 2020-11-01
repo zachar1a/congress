@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Card/Card";
 
 const url = "https://state-of-congress.herokuapp.com/api/results/"
 
@@ -22,6 +23,8 @@ class VoteResults extends React.Component{
     render(){
         const resultItems = this.state.results.map((result)=>{
             return(
+		    <Card name={result.number} title={result.title} chamber={result.chamber} result={result.Result} action={result.action} />
+		    /*
                 <div className="resultCard">
 		    <br/>
                     <br/>Number: <i>{result.number}</i> 
@@ -31,6 +34,7 @@ class VoteResults extends React.Component{
                         <br/>Result: {result.Result}
 		    <br/>
                 </div>
+	    */
             );
          });
         return(
