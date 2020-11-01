@@ -12,6 +12,29 @@ from django.views.generic import View
 from rest_framework.decorators import api_view
 from django.conf import settings
 
+# This sends an automatic response with the latest Vote Results
+@api_view(["GET"])
+def getLatestVote(request):
+    try:
+        vote = billResults.objects.filter().latest('Result') 
+    except:
+        return HttpResponse('''Not Found''', status=404)
+        pass
+    voteData = billResultsSerializer(vote)
+    return JsonResponse(voteData.data)
+
+# This sends an automatic response with the latest introduced Bill
+@api_view(["GET"])
+def getLatestBill(request):
+    try:
+        bill = billInfo.objects.filter().latest('number')
+    except:
+        pass
+    billData = billInfoSerializer(bill)
+    return JsonResponse(billData.data)
+
+# This view can retrieve a bill based on its slug
+# Perfect for creating individual pages
 @api_view(["GET"])
 def retrieveBill(request, slug):
     try:

@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
+import LatestBill from "../LatestBill/LatestBill";
 
 import "./Home.css";
 
@@ -13,6 +14,7 @@ class Home extends React.Component{
 		    <div>
 		    	<h2 className="title">State Of Congress</h2>
 		    	<Navbar />
+		    	<LatestBill />
 		    </div>
             );
         };

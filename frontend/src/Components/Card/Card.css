@@ -1,5 +1,5 @@
 .card{
-	width:40%;
+	width:60%;
 	margin:auto;
 	border:solid;
 	border-width:1px;
@@ -7,5 +7,5 @@
 	margin-bottom:5px;
 }
 .card h2{
-	color:red;
+	color:Blue;
 }

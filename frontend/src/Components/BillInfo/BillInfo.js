@@ -26,6 +26,7 @@ class BillInfo extends React.Component{
             return(
 		    <BillCard billid={bill.bill_id} 
 		    	      title={bill.title}
+		    	      introduced={bill.introduced}
 		    	      sponsorParty={bill.sponsor_party}
 		    	      sponsor={bill.sponsor_name}
 		    	      sponsorState={bill.sponsor_state}
@@ -34,6 +35,7 @@ class BillInfo extends React.Component{
             );
          });
         return[
+		<h1 className="bill-header">Current Bills</h1>,
 		<Navbar />,
 		billItems
 	]

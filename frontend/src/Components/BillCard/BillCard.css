@@ -1,5 +1,10 @@
+.bill-header{
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+}
 .BillCard{
-	width:40%;
+	width:60%;
 	margin:auto;
 	margin-top: 5px;
 	margin-bottom: 5px;

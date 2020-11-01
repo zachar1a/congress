@@ -18,7 +18,7 @@ from django.urls import path, include, re_path
 from rest_framework import routers
 from django.conf.urls import url, include 
 
-from results.views import FrontEndAppView, billInfoView, voteResults, retrieveBill
+from results.views import FrontEndAppView, billInfoView, voteResults, retrieveBill, getLatestBill, getLatestVote
 
 router = routers.DefaultRouter()
 router.register(r'info', billInfoView, 'info/')
@@ -31,4 +31,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('', FrontEndAppView.as_view()),
     path('bill/<slug>/', retrieveBill),
+    path('latest-bill/', getLatestBill),
+    path('latest-vote/', getLatestVote),
 ]
