@@ -1,10 +1,16 @@
 import React from "react";
 import BillInfo from './Components/BillInfo/BillInfo'
 import VoteResults from './Components/VoteResults/VoteResults'
+import Home from './Components/Home/Home'
 import './App.css';
 
 
+const Route = require("react-router-dom").Route;
+const Switch = require("react-router-dom").Switch;
+
+
 function App() {
+	/*
 	const voteTitleStyle={
 		width:"40%",
 		margin:"auto"
@@ -13,16 +19,16 @@ function App() {
 		width:"40%",
 		margin:"auto"
 	};
+	*/
   return (
     <div className="App">
-	  <div className="Votes">
-	  	<h2 className="vote-title" style={voteTitleStyle}>Vote Results</h2>
-	  	<VoteResults />
-	  </div>
-	  <div classNaame="Bills">
-	  	<h2 className="bill-title" style={BillTitleStyle}>Bill Info</h2>
-	  	<BillInfo />
-	  </div>
+	  <main>
+	  <Switch>
+	 	<Route path="/" component={Home} exact/>
+	 	<Route path="/Bills" component={BillInfo} exact/>
+	 	<Route path="/votes" component={VoteResults} exact/>
+	  </Switch>
+	  </main>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./BillCard.css";
+import "./BillCard.css";
 
 class BillCard extends React.Component{
 	render(){

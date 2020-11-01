@@ -1,5 +1,6 @@
 import React from "react";
 import BillCard from "../BillCard/BillCard";
+import Navbar from "../Navbar/Navbar";
 
 const url = "https://state-of-congress.herokuapp.com/api/info/"
 
@@ -32,9 +33,10 @@ class BillInfo extends React.Component{
 		    	      slug={bill.slug}/>
             );
          });
-        return(
-            billItems
-        )
+        return[
+		<Navbar />,
+		billItems
+	]
         };
 }
 

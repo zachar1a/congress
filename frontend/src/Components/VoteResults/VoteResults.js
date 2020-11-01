@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../Card/Card";
+import Navbar from "../Navbar/Navbar";
 
 const url = "https://state-of-congress.herokuapp.com/api/results/"
 
@@ -37,9 +38,10 @@ class VoteResults extends React.Component{
 	    */
             );
          });
-        return(
-            resultItems
-        )
+        return[
+		<Navbar />
+            	,resultItems
+	];
         };
 }
 

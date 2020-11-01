@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const BrowserRouter = require("react-router-dom").BrowserRouter;
+
 ReactDOM.render(
-    <App />,
-  document.getElementById('root')
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>
+  ,document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

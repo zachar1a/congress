@@ -1,0 +1,22 @@
+.navbar{
+	width:48%;
+	margin-right:auto;
+	margin-left:auto;
+}
+.navbar li{
+	list-style-type:none;
+	display:inline;
+	margin-left:2vw;
+}
+
+.navbar a{
+	text-decoration:none;
+	color:blue;
+}
+.navbar a:hover{
+	text-decoration:underline;
+	color:blue;
+}
+.navbar a:visited{
+	color:red;
+}
