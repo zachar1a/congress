@@ -15,3 +15,5 @@ Developing the cards for bills and votes
 
 # Nov. 1, 2020
 Added in some routing for the pages, probably am going to want to create a landing page for this, just to show off the latest bills and votes or something
+
+Created the latest bill and vote api endpoint and added them into the home component
