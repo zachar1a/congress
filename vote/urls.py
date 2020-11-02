@@ -31,7 +31,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('', FrontEndAppView.as_view()),
     #path(r'^$', FrontEndAppView.as_view()),
-    url(r'^(?:.*)/?$', FrontEndAppView.as_view()),
+    re_path(r'^(?P<path>.*)/$', FrontEndAppView.as_view()),
     path('bill/<slug>/', retrieveBill),
     path('latest-bill/', getLatestBill),
     path('latest-vote/', getLatestVote),
