@@ -34,6 +34,6 @@ urlpatterns = [
     path('latest-bill/', getLatestBill),
     path('latest-vote/', getLatestVote),
     #path(r'^$', FrontEndAppView.as_view()),
-    re_path(r'^(?P.*)/$', FrontEndAppView.as_view()),
+    #re_path(r'^(?P.*)/$', FrontEndAppView.as_view()),
     
 ]
