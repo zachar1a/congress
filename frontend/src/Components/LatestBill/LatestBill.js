@@ -4,10 +4,11 @@ import Card from "../Card/Card";
 
 const latestBillUrl= "https://state-of-congress.herokuapp.com/latest-bill/";
 const latestVoteUrl= "https://state-of-congress.herokuapp.com/latest-vote/";
+
 /*
- * These are for development
 const latestBillUrl= "http://localhost:8000/latest-bill/"
 const latestVoteUrl= "http://localhost:8000/latest-vote/"
+ * These are for development
 */
 
 //This is for testing the backend
