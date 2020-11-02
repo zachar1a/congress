@@ -2,8 +2,8 @@ import React from "react";
 import BillCard from "../BillCard/BillCard";
 import Card from "../Card/Card";
 
-const latestBillUrl= "https://state-of-congress.herokuapp.com/latest-bill/"
-const latestVoteUrl= "https://state-of-congress.herokuapp.com/latest-vote/"
+const latestBillUrl= "https://state-of-congress.herokuapp.com/latest-bill/";
+const latestVoteUrl= "https://state-of-congress.herokuapp.com/latest-vote/";
 /*
  * These are for development
 const latestBillUrl= "http://localhost:8000/latest-bill/"
