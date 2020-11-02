@@ -29,8 +29,9 @@ router.register(r'results', voteResults, 'results/')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('', FrontEndAppView.as_view()),
-    path(r'^(?:.*)/?$', FrontEndAppView.as_view()),
+    #path('', FrontEndAppView.as_view()),
+    path(r'^$', FrontEndAppView.as_view()),
+    url(r'^(?:.*)/?$', FrontEndAppView.as_view()),
     path('bill/<slug>/', retrieveBill),
     path('latest-bill/', getLatestBill),
     path('latest-vote/', getLatestVote),
