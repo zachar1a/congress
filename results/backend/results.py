@@ -8,11 +8,12 @@ billInfoUrl = "https://api.propublica.org/congress/v1/bills/search.json"
 def getRequest(u):
     return requests.get(u, headers={"x-api-key": '1OpkB3WTCfUjW4LHjOdRWaxbG1Ewa5kSrixmoPMv'})
 
-def viewVoteResults(r):
-    response = json.loads(r)
+def viewVoteResults():
+    response = json.loads(getRequest(voteUrl).text)
     billResults = []
 
     for v in response['results']['votes']:
+        print(v['bill']['title'])
         billResults.append(br(v['congress']
                              ,v['chamber']
                              ,v['bill']['number']
@@ -29,10 +30,6 @@ def viewVoteResults(r):
                              ,v['bill']['latest_action']))
 
     return billResults
-
-def houseVotes():
-    print('house has been called')
-    return viewVoteResults(getRequest(voteUrl).text)
 
 def bill():
     print('bill has been called')
