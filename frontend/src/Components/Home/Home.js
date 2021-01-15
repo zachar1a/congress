@@ -4,7 +4,7 @@ import LatestBill from "../LatestBill/LatestBill";
 
 import "./Home.css";
 
-const Link = require("react-router-dom").Link;
+//const Link = require("react-router-dom").Link;
 
 class Home extends React.Component{
 

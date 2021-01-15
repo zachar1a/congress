@@ -12,6 +12,7 @@ from django.views.generic import View
 from rest_framework.decorators import api_view
 from django.conf import settings
 
+
 # This sends an automatic response with the latest Vote Results
 @api_view(["GET"])
 def getLatestVote(request):
@@ -49,6 +50,7 @@ def retrieveBill(request, slug):
         return JsonResponse(billData.data)
 
 class FrontEndAppView(View):
+
     index = os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')
 
     def get(self, request):

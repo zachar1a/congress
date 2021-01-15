@@ -9,11 +9,15 @@ def getRequest(u):
     return requests.get(u, headers={"x-api-key": '1OpkB3WTCfUjW4LHjOdRWaxbG1Ewa5kSrixmoPMv'})
 
 def viewVoteResults():
+    print("results has been called")
     response = json.loads(getRequest(voteUrl).text)
     billResults = []
 
     for v in response['results']['votes']:
-        print(v['bill']['title'])
+        try:
+            v['bill']['title']
+        except:
+            continue
         billResults.append(br(v['congress']
                              ,v['chamber']
                              ,v['bill']['number']

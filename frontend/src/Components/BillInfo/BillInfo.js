@@ -37,7 +37,7 @@ class BillInfo extends React.Component{
         return[
 		<h1 className="bill-header">Current Bills</h1>,
 		<Navbar />,
-		billItems
+		billItems,
 	]
         };
 }
