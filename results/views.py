@@ -28,7 +28,7 @@ def getLatestVote(request):
 @api_view(["GET"])
 def getLatestBill(request):
     try:
-        bill = billInfo.objects.filter().latest('number')
+        bill = billInfo.objects.filter().last()
     except:
         pass
     billData = billInfoSerializer(bill)
