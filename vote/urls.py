@@ -34,7 +34,22 @@ urlpatterns = [
     path('bill/<slug>/', retrieveBill),
     path('latest-bill/', getLatestBill),
     path('latest-vote/', getLatestVote),
-    #path(r'^$', FrontEndAppView.as_view()),
-    #re_path(r'^(?P.*)/$', FrontEndAppView.as_view()),
-    
+
+    path('Bills/', FrontEndAppView.as_view()),
+    path('bills/', FrontEndAppView.as_view()),
+
+    path('Bills', FrontEndAppView.as_view()),
+    path('bills', FrontEndAppView.as_view()),
+
+
+
+    path('Votes/', FrontEndAppView.as_view()),
+    path('votes/', FrontEndAppView.as_view()),
+
+    path('Votes', FrontEndAppView.as_view()),
+    path('votes', FrontEndAppView.as_view()),
+
+
+
+    path('latest-vote/', getLatestVote),
 ]
