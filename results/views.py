@@ -17,7 +17,7 @@ from django.conf import settings
 @api_view(["GET"])
 def getLatestVote(request):
     try:
-        vote = billResults.objects.last()
+        vote = billResults.objects.filter().last()
     except:
         return HttpResponse('''Not Found''', status=404)
         pass
