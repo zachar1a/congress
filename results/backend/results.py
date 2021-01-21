@@ -2,8 +2,7 @@ import requests, json, os
 from .bill import billResults as br
 from .bill import billInfo as bi
 
-voteUrl = "https://api.propublica.org/congress/v1/house/votes/recent.json"
-senateVoteUrl = "https://api.propublica.org/congress/v1/senate/votes/recent.json"
+voteUrl = "https://api.propublica.org/congress/v1/both/votes/recent.json"
 
 billInfoUrl = "https://api.propublica.org/congress/v1/bills/search.json"
 
@@ -12,12 +11,13 @@ def getRequest(u):
 
 def viewVoteResults():
     print("results has been called")
-    response = json.loads(getRequest(voteUrl).text)
-    senateResponse = json.loads(getRequest(senateVoteUrl).text)
-    response.update(senateResponse)
+    response= json.loads(getRequest(voteUrl).text)
     billResults = []
 
     for v in response['results']['votes']:
+        print(v['chamber'])
+        if v['chamber'] == "Senate":
+            print(v)
         try:
             v['bill']['title']
         except:
