@@ -78,7 +78,7 @@ class BillInfo extends React.Component{
 		/>,
 		<h1 className="vote-header">LatestVote</h1>,
 		<Card chamber={this.state.voteChamber}
-		      name={this.state.voteName} + " " +  {this.state.voteNumber}
+		      name={this.state.voteNumber}
 		      title={this.state.voteTitle}
 		      result={this.state.voteResult}
 		      action={this.state.voteAction}
