@@ -33,6 +33,7 @@ class BillInfo extends React.Component{
 		voteName:'',
 		voteTitle:'',
 		voteResult:'',
+		voteNumber:'',
 		voteAction:''
         };
     }
@@ -57,6 +58,7 @@ class BillInfo extends React.Component{
 			voteName:data.name,
 			voteTitle:data.title,
 			voteResult:data.Result,
+			voteNumber:data.number,
 			voteAction:data.action
 		})
 	);
@@ -78,6 +80,7 @@ class BillInfo extends React.Component{
 		<Card chamber={this.state.voteChamber}
 		      name={this.state.voteName}
 		      title={this.state.voteTitle}
+		      number={this.state.voteNumber}
 		      result={this.state.voteResult}
 		      action={this.state.voteAction}
 		/>
