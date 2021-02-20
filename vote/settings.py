@@ -26,8 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wx$35%m%5zy2vjs43x%)kner%p_l8a(fa(qa$&jk2$5my1)b^('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
-#DEBUG =False
+#DEBUG =True
+DEBUG =False
+SECURE_SSL_REDIRECT=True
 
 ALLOWED_HOSTS = ['localhost','state-of-congress.herokuapp.com']
 
