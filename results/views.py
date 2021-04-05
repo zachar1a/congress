@@ -18,7 +18,7 @@ from django.conf import settings
 def getLatestVote(request):
     try:
         # vote = billResults.objects.filter().latest('number')
-        vote = billResults.objects.last()
+        vote = billResults.objects.filter().last()
         print(vote)
     except:
         return HttpResponse('''Not Found''', status=404)
