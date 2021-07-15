@@ -52,6 +52,7 @@ def retrieveBill(request, slug):
         return JsonResponse(billData.data)
 
 class FrontEndAppView(View):
+    print('this is running')
 
     index = os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')
 
