@@ -37,6 +37,7 @@ class BillInfo extends React.Component{
 		voteAction:''
         };
     }
+    // this is a test
     componentDidMount(){
         fetch(latestBillUrl)
         .then(data=> data.json())
