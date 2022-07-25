@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 import requests
-from .testing import billInfoResults, voteResults
+from .bill_and_vote import billInfoResults, voteResults
 
 import os, logging
 from django.http import HttpResponse
