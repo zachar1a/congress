@@ -11,7 +11,7 @@ class BillCard extends React.Component{
 		 */
 
 		return (
-			<div className="BillCard" id={this.props.introduced}>
+			<div className="BillCard" id={this.props.introduced} ref={this.props.introduced}>
 				<h2>[{this.props.sponsorParty}] {this.props.sponsor} {this.props.sponsorState}</h2>
 				<p>Date: {this.props.introduced}</p>
 				<h3>{this.props.billid} {this.props.title}</h3>

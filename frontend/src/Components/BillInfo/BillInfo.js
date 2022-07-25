@@ -1,7 +1,6 @@
 import React from "react";
 import BillCard from "../BillCard/BillCard";
 import Navbar from "../Navbar/Navbar";
-import FilterBar from "../FilterBar/FilterBar";
 
 const url = "https://state-of-congress.herokuapp.com/api/info/"
 
@@ -21,12 +20,47 @@ class BillInfo extends React.Component{
         .then(data=>this.setState({bills:data}));
         console.log(this.state.bills);
     }
-    const sortBill = introduced => {
-      const sorted = BillCard.sort((a,b) => b["introduced"] - a["introduced"]);
-      console.log(sorted);
+
+
+    mysort= () => {
+      console.log(this.state.bills[0])
+      var obj = [...this.state.bills];
+      obj.sort((a,b) => a.introduced < b.introduced);
+      console.log(obj[0])
+      obj.map((bill) =>
+          <BillCard
+                billid={bill.bill_id}
+		    	      title={bill.title}
+		    	      introduced={bill.introduced}
+		    	      sponsorParty={bill.sponsor_party}
+		    	      sponsor={bill.sponsor_name}
+		    	      sponsorState={bill.sponsor_state}
+		    	      infoUrl={bill.infoUrl}
+		    	      slug={bill.slug}/>
+      );
+      console.log(obj[0]);
+      console.log("hello");
     }
+
+    help(){
+      return(
+        <div>
+          <ul>
+            <li onClick={this.mysort.bind(this)}>hello</li>
+            <li>world</li>
+            <li>good</li>
+          </ul>
+        </div>
+      )
+    }
+
     render(){
-        const billItems = this.state.bills.map((bill)=>{
+
+        return[
+          <h1 className="bill-header">Current Bills</h1>,
+		      <Navbar />,
+          this.help(),
+          this.state.bills.map((bill)=>{
             return(
 		          <BillCard
                 billid={bill.bill_id}
@@ -38,14 +72,7 @@ class BillInfo extends React.Component{
 		    	      infoUrl={bill.infoUrl}
 		    	      slug={bill.slug}/>
             );
-         });
-        return[
-          <h1 className="bill-header">Current Bills</h1>,
-          <h2>hello</h2>,
-		      <Navbar />,
-          <button onClick={this.sortBill}>sort me</button>,
-          <FilterBar />,
-		      billItems
+         })
         ]
         };
 }
