@@ -18,10 +18,10 @@ from django.urls import path, include, re_path
 from rest_framework import routers
 from django.conf.urls import url, include 
 
-from results.views import FrontEndAppView, billInfoView, voteResults, retrieveBill, getLatestBill, getLatestVote
+from results.views import FrontEndAppView, billInfoResults, voteResults, retrieveBill, getLatestBill, getLatestVote
 
 router = routers.DefaultRouter()
-router.register(r'info', billInfoView, 'info/')
+router.register(r'info', billInfoResults, 'info/')
 router.register(r'results', voteResults, 'results/')
 
 #urlpatterns=router.urls

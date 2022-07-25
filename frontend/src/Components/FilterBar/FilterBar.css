@@ -1,0 +1,11 @@
+.filterbar{
+    width: 67%;
+    margin-right: auto;
+    margin-left: auto;;
+}
+
+.filterbar li{
+    list-style-type: none;
+    display: inline;
+    margin-left:2vw;
+}

@@ -14,30 +14,33 @@ def viewVoteResults():
     response= json.loads(getRequest(voteUrl).text)
     billResults = []
 
-    for v in response['results']['votes']:
-        print(v['chamber'])
-        if v['chamber'] == "Senate":
-            print(v)
-        try:
-            v['bill']['title']
-        except:
-            continue
-        billResults.append(br(v['congress']
-                             ,v['chamber']
-                             ,v['bill']['number']
-                             ,v['bill']['title']
-                             ,v['democratic']['yes']
-                             ,v['democratic']['no']
-                             ,v['democratic']['not_voting']
-                             ,v['republican']['yes']
-                             ,v['republican']['no']
-                             ,v['republican']['not_voting']
-                             ,v['total']['yes']
-                             ,v['total']['no']
-                             ,v['result'],v['source']
-                             ,v['bill']['latest_action']))
+    try:
+        for v in response['results']['votes']:
+            print(v['chamber'])
+            if v['chamber'] == "Senate":
+                print(v)
+            try:
+                v['bill']['title']
+            except:
+                continue
+            billResults.append(br(v['congress']
+                                ,v['chamber']
+                                ,v['bill']['number']
+                                ,v['bill']['title']
+                                ,v['democratic']['yes']
+                                ,v['democratic']['no']
+                                ,v['democratic']['not_voting']
+                                ,v['republican']['yes']
+                                ,v['republican']['no']
+                                ,v['republican']['not_voting']
+                                ,v['total']['yes']
+                                ,v['total']['no']
+                                ,v['result'],v['source']
+                                ,v['bill']['latest_action']))
 
-    return billResults
+        return billResults
+    except:
+        print(response)
 
 def bill():
     print('bill has been called')

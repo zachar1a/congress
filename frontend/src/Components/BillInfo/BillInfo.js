@@ -1,6 +1,7 @@
 import React from "react";
 import BillCard from "../BillCard/BillCard";
 import Navbar from "../Navbar/Navbar";
+import FilterBar from "../FilterBar/FilterBar";
 
 const url = "https://state-of-congress.herokuapp.com/api/info/"
 
@@ -35,10 +36,12 @@ class BillInfo extends React.Component{
             );
          });
         return[
-		<h1 className="bill-header">Current Bills</h1>,
-		<Navbar />,
-		billItems,
-	]
+          <h1 className="bill-header">Current Bills</h1>,
+          <h2>hello</h2>,
+		      <Navbar />,
+          <FilterBar />,
+		      billItems
+        ]
         };
 }
 
