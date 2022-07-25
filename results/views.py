@@ -33,7 +33,7 @@ def getLatestBill(request):
         bill = billInfo.objects.filter().last()
     except:
         pass
-    billData = billInfoSerializer(bill)
+    billData = billResultsSerializer(bill)
     return JsonResponse(billData.data)
 
 # This view can retrieve a bill based on its slug
