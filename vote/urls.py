@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import routers
-from django.conf.urls import url, include 
+#from django.conf.urls import url, include
 
 from results.views import FrontEndAppView, billInfoResults, voteResults, retrieveBill, getLatestBill, getLatestVote
 
