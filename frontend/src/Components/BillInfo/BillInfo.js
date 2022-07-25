@@ -21,11 +21,15 @@ class BillInfo extends React.Component{
         .then(data=>this.setState({bills:data}));
         console.log(this.state.bills);
     }
-
+    const sortBill = introduced => {
+      const sorted = BillCard.sort((a,b) => b["introduced"] - a["introduced"]);
+      console.log(sorted);
+    }
     render(){
         const billItems = this.state.bills.map((bill)=>{
             return(
-		    <BillCard billid={bill.bill_id} 
+		          <BillCard
+                billid={bill.bill_id}
 		    	      title={bill.title}
 		    	      introduced={bill.introduced}
 		    	      sponsorParty={bill.sponsor_party}
@@ -39,6 +43,7 @@ class BillInfo extends React.Component{
           <h1 className="bill-header">Current Bills</h1>,
           <h2>hello</h2>,
 		      <Navbar />,
+          <button onClick={this.sortBill}>sort me</button>,
           <FilterBar />,
 		      billItems
         ]
