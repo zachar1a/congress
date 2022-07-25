@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import billResultsSerializer
+from .serializers import billResultsSerializer, billInfoSerializer
 from .models import billInfo, billResults
 import requests
 from .bill_and_vote import billInfoResults, voteResults
@@ -33,7 +33,7 @@ def getLatestBill(request):
         bill = billInfo.objects.filter().last()
     except:
         pass
-    billData = billResultsSerializer(bill)
+    billData = billInfoSerializer(bill)
     return JsonResponse(billData.data)
 
 # This view can retrieve a bill based on its slug
