@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import billResultsSerializer
+from .models import billInfo, billResults
 import requests
 from .bill_and_vote import billInfoResults, voteResults
 
